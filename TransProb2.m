@@ -1,4 +1,4 @@
-function [P_saSPrime] = TransProb(pe,s,a,sprime)
+function [P_saSPrime] = TransProb2(pe,s,a,sprime)
 %Provides the transition probability of state S' given an error
 %probability, previous state, previous action, and S' 
 %   Returns the probability of a state given 12 possible actions
