@@ -1,7 +1,7 @@
 function [SPrime] = NextS(pe,s,a)
 %Generates the next state given an error probability Pe, current state S,
 %and action a
-%   Uses 
+%   Uses TransProb2
 b=rand(); %Generate a number between 0 and 1
 for i=0:5; %x'
     for j=0:5; %y'
