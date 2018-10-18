@@ -12,7 +12,7 @@ while Loop==true;
     if sum(sum(sum(PiNew==Pi)))==432;
         Loop=false;
     end
-    sum(sum(sum(PiNew==Pi))) %lets user check how fast conversion is occuring
+    %sum(sum(sum(PiNew==Pi))) %lets user check how fast conversion is occuring
     Pi=PiNew;
 end
 PiOptimal=Pi;
