@@ -83,7 +83,8 @@ tic
 [VIPiStar,VIVStar]=ValueIteration(0.9,0);
 VITrajectory=GenTraj(VIPiStar,[1,4,6],0);
 disp('It obtains the same Policy and Values for Value Iteration and Policy Iteration')
-
+differencePi=432-sum(sum(sum(PiStar==VIPiStar)))
+differenceValue=sum(sum(sum(Values-VIVstar)))
 %4(c)
 disp('4(c)')
 toc
@@ -95,8 +96,8 @@ PiStar2=PolicyIteration(PiNot(),0.9,0.25);
 OptimalTrajectory2=GenTraj(PiStar2,[1,4,6],0.25);
 disp('The trajectory of the robot prescribed by Pi* with Pe=0.25 is:')
 disp(OptimalTrajectory2)
-PiValues2=PolicyEval(PiStar2,0.9,0.25);
-disp(['The value of the robot prescribed by Pi* with Pe=0.25 at position [1,4,6] is ',num2str(PiValues2(2,5,7)),'.'])
+Values2=PolicyEval(PiStar2,0.9,0.25);
+disp(['The value of the robot prescribed by Pi* with Pe=0.25 at position [1,4,6] is ',num2str(Values2(2,5,7)),'.'])
 toc
 
 %5(b)
@@ -112,4 +113,6 @@ toc
 
 %5(c)
 disp('5(c)')
-disp('When possibility for error is introduced, there is a chance that the robot must take a significantly longer path, or retrace its steps when an error occurs.  If the goal is made to only be facing downward, the robot must take a much longer path, and with the probability of error introduced, the path can become extremely long.')
+disp('When possibility for error is introduced, there is a chance that the robot must take a significantly longer path, or retrace its steps when an error occurs.')
+disp('If the goal is made to only be facing downward, the robot must take a much longer path, and with the probability of error introduced, the path can become extremely long.')
+disp('Furthermore, when the goal is facing downward, the robot tends to try to back into the goal as opposed to move forward into it')
